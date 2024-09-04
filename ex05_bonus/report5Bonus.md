@@ -2,8 +2,10 @@
 
 2. Un problème se présente : il n'est pas possible de changer l'adresse dans le code, ou via les arguments du programme. Lorsqu'il se relance, il utilise nécessairement l'adresse qui ne `pong` pas.
 Ma solution (voir Screenshots) :
+
 - trouver une adresse IP capable de répondre au `ping` (j'ai choisi l'adresse de `loopback`, la fameuse 127.0.0.1)
-- rediriger l'IP du code vers cette adresse grâce à la commande `netsh` dans Powershell
+- rediriger l'IP du code vers cette adresse grâce à la commande `netsh` dans Powershell.
+
 Et voilà, nous sommes correctement infectés !
 
 3. J'ai trouvé ce défi très divertissant et j'ai pu découvrir beaucoup de nouvelles choses. Merci beaucoup !
