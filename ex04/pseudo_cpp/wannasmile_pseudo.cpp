@@ -1,14 +1,8 @@
 void relaunchSelf(std::string addrIP)
 {
   char *filename;
-  __int64 v2;
-  __int64 v3;
   WCHAR *commandLine;
-  char v7[44];
   DWORD ExitCode;
-  _BYTE buffer3[32];
-  char buffer1[32];
-  char buffer2[32];
   struct _PROCESS_INFORMATION ProcessInformation;
   struct _STARTUPINFOW StartupInfo;
 
@@ -16,12 +10,7 @@ void relaunchSelf(std::string addrIP)
   StartupInfo.cb = 104;
   memset(&ProcessInformation, 0, sizeof(ProcessInformation));
   filename = __p___argv();
-  std::operator+<char>(buffer1, filename, " wd3r05OZxpeX "); // tout le code jusqu'au 'if' ne sert qu'à obtenir :
-  std::operator+<char>(buffer2, buffer1, addrIP);            // 'wannasmile wd3r05OZxpeX m5OYhJuckoSbmZiEm56Y'
-  v2 = std::string::end(buffer2);
-  v3 = std::string::begin(buffer2);
-  std::wstring::basic_string<__gnu_cxx::__normal_iterator<char *,std::string>,void>((__int64)buffer3, v3, v2);
-  commandLine = (WCHAR *)std::wstring::operator[](buffer3, 0);
+  commandLine = std::wstring(filename + " wd3r05OZxpeX " + addrIP)  // 'wannasmile wd3r05OZxpeX m5OYhJuckoSbmZiEm56Y'
   if (CreateProcessW(0, commandLine, 0, 0, 0, 0, 0, 0, &StartupInfo, &ProcessInformation))
   {
     WaitForSingleObject(ProcessInformation.hProcess, 0xFFFFFFFF);
